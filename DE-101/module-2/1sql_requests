@@ -1,0 +1,6 @@
+select people.person, sum(sales), count(sales) from orders join people on orders.region = people.region group by person 
+order by sum(sales) desc limit 10
+
+
+
+select date_trunc('year', orders.order_date), sum(sales) from orders group by date_trunc('year', orders.order_date)
